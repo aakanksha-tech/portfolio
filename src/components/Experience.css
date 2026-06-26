@@ -1,0 +1,165 @@
+.experience-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 1rem auto 0 auto;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+/* Timeline central line */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 2px;
+  height: 100%;
+  background: var(--border-color);
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .timeline-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Timeline items container */
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  width: 100%;
+  padding-left: 50px; /* Space for node on left */
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .timeline-item {
+    padding-left: 0;
+    width: 50%;
+  }
+
+  /* Alternating columns */
+  .timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 3rem;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 3rem;
+  }
+}
+
+/* Timeline Node */
+.timeline-node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-1);
+}
+
+@media (min-width: 768px) {
+  .timeline-node {
+    left: auto;
+    top: 5px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-node {
+    right: -21px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-node {
+    left: -21px;
+  }
+}
+
+/* Timeline Cards Content */
+.timeline-content {
+  padding: 1.8rem;
+  z-index: 2;
+  position: relative;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.date-icon {
+  color: var(--accent-1);
+}
+
+.timeline-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.timeline-badge.work {
+  color: var(--accent-1);
+  border-color: rgba(0, 242, 254, 0.2);
+}
+
+.timeline-badge.education {
+  color: var(--accent-2);
+  border-color: rgba(138, 43, 226, 0.2);
+}
+
+.timeline-badge.course {
+  color: #ffbd2e;
+  border-color: rgba(255, 189, 46, 0.2);
+}
+
+.timeline-role {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.timeline-company {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.timeline-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

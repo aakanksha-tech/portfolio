@@ -1,0 +1,216 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 2rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-1);
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.hero-typing-container {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  height: 45px;
+}
+
+.hero-typing {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--accent-1);
+  margin-left: 4px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cta-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-speed) ease;
+}
+
+.cta-btn.primary {
+  background: var(--accent-gradient);
+  color: hsl(224, 71%, 4%);
+  border: none;
+}
+
+.cta-btn.primary:hover {
+  background: var(--accent-gradient-hover);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Specific styling for text in light mode to keep it readable if text-primary changes */
+[data-theme="light"] .cta-btn.primary {
+  color: white;
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-color);
+}
+
+.cta-btn.secondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent-1);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.cta-btn:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+.hero-socials {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all var(--transition-speed) ease;
+}
+
+.social-icon:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-1);
+  background: var(--surface-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--glow-shadow);
+}
+
+/* Hero Visual Graphic Area */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-orb {
+  position: absolute;
+  width: clamp(250px, 40vw, 400px);
+  height: clamp(250px, 40vw, 400px);
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: pulse-glow 8s infinite alternate;
+  z-index: 0;
+}
+
+.visual-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  z-index: 1;
+}
+
+.card-header {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.8rem;
+}
+
+.card-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.card-dot.red { background: #ff5f56; }
+.card-dot.yellow { background: #ffbd2e; }
+.card-dot.green { background: #27c93f; }
+
+.card-body {
+  overflow-x: auto;
+}
+
+.code-keyword { color: #f92672; }
+.code-string { color: #e6db74; }
+.code-bool { color: #ae81ff; }
+
+[data-theme="light"] .code-keyword { color: #d01716; }
+[data-theme="light"] .code-string { color: #0f8541; }
+[data-theme="light"] .code-bool { color: #800080; }
